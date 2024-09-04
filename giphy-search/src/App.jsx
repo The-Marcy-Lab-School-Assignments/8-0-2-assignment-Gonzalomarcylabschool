@@ -1,11 +1,11 @@
 import NavBar from './components/NavBar'
 import GifContainer from './components/GifContainer'
-import GifSearch from './components/GifSearch'
+// import GifSearch from './components/GifSearch'
 import { handleFetch } from './utils';
 import { useState, useEffect } from 'react';
-import { API_KEY } from './config';
+// import { API_KEY } from './config';
 
-const URL = `http://localhost:8080/api/gifs`;
+const URL = `/api/gifs`;
 
 function App() {
   const [gifs, setGifs] = useState([]);

@@ -23,7 +23,7 @@ const serveGifs = async (req, res) => {
     : `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=3&rating=g`;
 
   try {
-    console.log(`Fetching data from ${url}`);
+    // console.log(`Fetching data from ${url}`);
     const [data, error] = await fetchData(url);
     res.send(data);
   } catch (error) {
