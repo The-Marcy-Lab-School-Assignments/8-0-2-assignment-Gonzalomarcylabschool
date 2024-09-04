@@ -5,7 +5,7 @@ import { handleFetch } from './utils';
 import { useState, useEffect } from 'react';
 import { API_KEY } from './config';
 
-const URL = `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25&offset=0&rating=g&bundle=messaging_non_clips`
+const URL = `http://localhost:8080/api/gifs`;
 
 function App() {
   const [gifs, setGifs] = useState([]);

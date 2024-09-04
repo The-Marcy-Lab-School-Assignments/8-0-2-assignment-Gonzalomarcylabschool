@@ -1,4 +1,5 @@
 require('dotenv').config();
+const fetchData = require('./utils/fetchData');
 const express = require('express');
 const path = require('path');
 
@@ -18,10 +19,11 @@ const serveGifs = async (req, res) => {
   const API_KEY = process.env.API_KEY;
   const query = req.query.q;
   const url = !query
-    ? `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=3&rating=g`
+    ? `https://api.giphy.com/v1/gifs/trending?api_key=${API_KEY}&limit=25&rating=g`
     : `https://api.giphy.com/v1/gifs/search?api_key=${API_KEY}&q=${query}&limit=3&rating=g`;
 
   try {
+    console.log(`Fetching data from ${url}`);
     const [data, error] = await fetchData(url);
     res.send(data);
   } catch (error) {
